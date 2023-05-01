@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>일반적인 웹 페이지 레이아웃</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f0f0f0;
+            margin: 0;
+            padding: 0;
+        }
+
+        .header {
+            background-color: #333;
+            position: fixed;
+            top: 0;
+            width: 100%;
+            padding: 16px 0;
+            z-index: 100;
+        }
+
+        .header h1 {
+            color: #fff;
+            text-align: center;
+            font-size: 24px;
+            margin: 0;
+        }
+
+        .main {
+            margin-top: 80px;
+            padding: 24px;
+        }
+
+        .container {
+            background-color: #ffffff;
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 24px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+            display: flex; /* Flexbox를 사용하여 메인 콘텐츠 영역을 3등분합니다. */
+        }
+
+        .column {
+            flex: 1; /* 각 열(column)의 너비를 균등하게 설정합니다. */
+            padding: 0 16px;
+        }
+
+        h1, h2 {
+            font-size: 24px;
+            color: #333333;
+            text-align: center;
+            margin-bottom: 16px;
+        }
+
+        p {
+            font-size: 14px;
+            color: #666666;
+            line-height: 1.5;
+            margin: 16px 0;
+        }
+
+        ul {
+            list-style-type: disc; /* 리스트 스타일을 둥근 점(disc)으로 설정합니다. */
+            padding-left: 32px; /* 리스트 왼쪽 여백을 설정합니다. */
+        }
+
+        .footer {
+            background-color: #333;
+            padding: 16px 0;
+            color: #fff;
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+<header class="header">
+    <h1>일반적인 웹 페이지 레이아웃</h1>
+</header>
+<main class="main">
+    <div class="container">
+        <div class="column">
+            <h2>리스트</h2>
+            <ul>
+                <li>항목 1</li>
+                <li>항목 2</li>
+                <li>항목 3</li>
+                <li>항목 4</li>
+            </ul>
+        </div>
+        <div class="column">
+            <h2>컨텐츠 2</h2>
+            <p>이 영역은 메인 콘텐츠 영역의 가운데 부분입니다. 여기에 원하는 콘텐츠를 추가할 수 있습니다.</p>
+        </div>
+        <div class="column">
+            <h2>컨텐츠 3</h2>
+            <p>이 영역은 메인 콘텐츠 영역의 오른쪽 부분입니다. 여기에 원하는 콘텐츠를 추가할 수 있습니다.</p>
+        </div>
+    </div>
+</main>
+<footer class="footer">
+    <p>Copyright &copy; 2023 일반적인 웹 페이지 레이아웃. All Rights Reserved.</p>
+</footer>
+</body>
+</html>
