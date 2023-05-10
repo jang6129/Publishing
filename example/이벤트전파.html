@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <title>example</title>
+    <style>
+
+        #fruits {
+            padding: 50px;
+            border: 2px solid red;
+        }
+        #fruits li {
+            background: yellow;
+            margin-bottom: 10px;
+        }
+
+        #fruits li:first-child {
+            position: absolute;
+            bottom: 10%;
+            right: 5%;
+        }
+    </style>
+</head>
+<body>
+
+    <ul id = "fruits">
+        <li class = "apple">apple</li>
+        <li class = "banana">banana</li>
+        <li class = "grape">grape</li>
+    </ul>
+
+    <script>
+        const $fruits = document.getElementById('fruits');
+        const $apple = $fruits.firstElementChild;
+
+        $fruits.addEventListener('click', (e) => {
+            console.log(`${e.target} 클릭`);
+        });
+
+        $apple.onclick = e => {
+            console.log("apple");
+        }
+
+    </script>
+
+</body>
+
+</html>

@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <title>example</title>
+
+    <style>
+        #fruits {
+            display: flex;
+            list-style: none;
+            padding: 20px;
+            border: 2px solid red;
+            flex-wrap: wrap;
+        }
+
+        #fruits li {
+            width: 100px;
+            cursor: pointer;
+            background: orange;
+            margin-right: 10px;
+        }
+
+        .active {
+            color: red;
+            text-decoration: underline;
+        }
+    </style>
+
+</head>
+<body>
+
+    <ul id="fruits">
+        <li id="apple" class="active">apple</li>
+        <li id="banana">banana</li>
+        <li id="grape">grape</li>
+    </ul>
+
+    <div>현재 고른 과일 : <em class="msg">apple</em></div>
+
+    <label>
+        새로운 과일을 추가해주세요
+        <input type="text" class="text-box">
+        <button id="add">추가</button>
+    </label>
+
+<script>
+    const $fruits = document.querySelector('#fruits');
+    // $fruits.addEventListener('click', () => {
+    //     for($li of [...$fruits.children]) {
+    //         if ($li.classList.contains('active')) {
+    //             $li.classList.remove('active');
+    //         }
+    //     }
+    // });
+    $fruits.onclick = e => {
+        if (!e.target.matches('#fruits li')) e.stopPropagation();
+        else {
+            // active 제거
+            for($li of [...$fruits.children]) {
+                if ($li.classList.contains('active')) {
+                    $li.classList.remove('active');
+                }
+            }
+            // 클릭한 li에 active 부여
+            e.target.classList.add('active');
+            // msg에 클릭한 li 표시
+            $txt = document.querySelector(".msg");
+            $txt.textContent = e.target.textContent;
+        }
+    }
+    // 새로운 과일 추가
+    $btn = document.getElementById('add');
+    $btn.onclick = () => {
+        $inputText = document.querySelector('.text-box').value;
+        let newItem = document.createElement('li');
+        newItem.id = $inputText;
+        newItem.textContent = $inputText;
+        $fruits.appendChild(newItem);
+    }
+
+</script>
+
+</body>
+
+</html>
