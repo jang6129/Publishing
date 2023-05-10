@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <title>example</title>
+
+    <style>
+        .text {
+            display: none;
+        }
+    </style>
+
+</head>
+<body>
+
+<button id="hideButton">b1</button>
+<div class = "text">안녕하세요</div>
+
+<script>
+
+    $button = document.getElementById("hideButton");
+    $button.onclick = () => {
+        $t = document.querySelector('div');
+        $t.classList.toggle('text');
+    }
+
+</script>
+
+</body>
+
+</html>

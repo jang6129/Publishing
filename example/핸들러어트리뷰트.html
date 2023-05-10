@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        .box {
+            width: 100px;
+            height: 100px;
+            background: orange;
+            margin: 20px;
+        }
+
+        .box.red {
+            background: red;
+        }
+
+        .box.green {
+            background: yellowgreen;
+            font-size: 25px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+    </style>
+</head>
+<body>
+<div class="box" onclick="alert('orange');"></div>
+<div class="box red" ondblclick="widthDouble()"></div>
+<div class="box green" onmouseenter="hello2()" onmouseout="bye2()"></div>
+
+<script>
+    function widthDouble() {
+        const $redBox = document.querySelector('.red');
+        if ($redBox.style.width == '100px') $redBox.style.width = '200px';
+        else $redBox.style.width = '100px';
+    }
+
+    function hello() {
+        let item = document.createElement('text');
+        item.textContent = 'Hello';
+        const $greenBox = document.querySelector('.green');
+        $greenBox.appendChild(item);
+    }
+
+    function hello2() {
+        const $greenBox = document.querySelector('.green');
+        $greenBox.textContent = 'Hello';
+    }
+
+    function bye() {
+        const $greenBox = document.querySelector('.green');
+        $greenBox.removeChild($greenBox.lastElementChild);
+    }
+
+    const bye2 = () => {
+        const $greenBox = document.querySelector('.green');
+        $greenBox.textContent = "";
+    }
+
+</script>
+</body>
+
+</html>
